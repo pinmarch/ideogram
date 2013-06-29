@@ -7,10 +7,10 @@ Options
 -------
 
 +   `--width -w`
-    width of output .png (default is 700px)
+    width of output .png; default is 700px
 
 +   `--height -h`
-    height for each chromosome of output .png (default is 40px)
+    height for each chromosome of output .png; default is 40px
 
 +   `--output -o`
     filename of .png; default is stdout
