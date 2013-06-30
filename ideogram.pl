@@ -45,8 +45,8 @@ GetOptions(\%cmdopts, "width=i", "height=i", "chroms=s@", "fill", "output=s");
 
 my %chroms = map { ("chr".(1..22, "X", "Y")[$_], $_) } (0..23);
 my @tchroms = $cmdopts{chroms} ?
-              (grep { exists $chroms{$_} }
-               (split /,/, lc(join(",", @{$cmdopts{chroms}})))) :
+              (grep { exists $chroms{$_} } map { s/chr/chr/i; $_ }
+               (split /,/, join(",", @{$cmdopts{chroms}}))) :
               (sort { $chroms{$a} <=> $chroms{$b} } (keys %chroms));
 
 my $cytoband = loadCytoBand();
