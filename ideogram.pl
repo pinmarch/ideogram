@@ -37,7 +37,8 @@ sub getMaxPosition {
 
 sub widthConv {
  my $w = shift;
- $w > 0 ? sqrt $w : 0;
+ my $f = shift;
+ $w > 0 ? ($f ? sqrt $w : $w) : 0;
 }
 
 my %cmdopts = ();
